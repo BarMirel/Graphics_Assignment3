@@ -27,10 +27,15 @@ in vec2 v_TexCoord;
 
 uniform vec4 u_Color;
 uniform sampler2D u_Texture;
+uniform int u_PickingMode;
 
 void main()
 {
-	vec4 texColor = texture(u_Texture, v_TexCoord) * u_Color;
-	// gl_FragColor = texColor * v_Color;  // Deprecated
-	FragColor = texColor * v_Color;
+	if (u_PickingMode == 1) {
+		// In picking mode, use only u_Color
+		FragColor = u_Color;
+	} else {
+		vec4 texColor = texture(u_Texture, v_TexCoord) * u_Color;
+		FragColor = texColor * v_Color;
+	}
 }

@@ -36,6 +36,8 @@ class Camera
         float m_Right = 1.0f;
         float m_Bottom = -1.0f; 
         float m_Top = 1.0f;
+
+        float m_FOV = 45.0f;
     public:
         // Prevent the camera from jumping around when first clicking left click
         double m_OldMouseX = 0.0;
@@ -49,9 +51,27 @@ class Camera
         // Update Projection matrix for Orthographic mode
         void SetOrthographic(float near, float far);
 
+        // Update Projection matrix for Perspective mode
+        void SetPerspective(float fov, float near, float far);
+
+        // Update window size 
+        void SetWindowSize(int width, int height);
+
+        void SetPosition(const glm::vec3& position);
+        void SetOrientation(const glm::vec3& orientation);
+
+        void RotateAroundOrigin(float deltaX, float deltaY);  // Rotate camera around origin 
+        void PanCamera(float deltaX, float deltaY);            // Pan camera left/right/up/down
+        void ZoomCamera(float deltaZ);                         // Move camera forward/backward
+
         // Handle camera inputs
         void EnableInputs(GLFWwindow* window);
 
         inline glm::mat4 GetViewMatrix() const { return m_View; }
         inline glm::mat4 GetProjectionMatrix() const { return m_Projection; }
+        inline glm::vec3 GetOrientation() const { return m_Orientation; }
+        inline glm::vec3 GetUp() const { return m_Up; }
+        inline float GetNear() const { return m_Near; }
+        inline float GetFar() const { return m_Far; }
+        inline float GetFOV() const { return m_FOV; }
 };
