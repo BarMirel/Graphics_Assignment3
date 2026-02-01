@@ -1,0 +1,5 @@
+For both the classification and the segmentation for both the subsets the accuracy is low compared to an unchanged set.
+This is most likely because projecting an object like a chair for example can make it look very much like a projected table, the same for something kike airplane and lamp.
+Furthermore the accuracy for the subset2 (with the rotation) seems much lower than subset1 and the loss greater.
+We think that that is because the projection in subset1 is less volatile, we just lose one of 3 axes, where is subset2 we can project from every direction because of the rotation, which creates more chaos.
+Even though PointNet is invariant to rotation, the information we lose from the projection is inconsistent, especialy in percpective projection where an object can look very different depending on the viewing direction.

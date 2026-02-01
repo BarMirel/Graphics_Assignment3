@@ -3,7 +3,11 @@ bin/*
 !bin/.keep
 PointNet/count_splits.py
 PointNet/pointnet_seg.pth
+PointNet/pointnet_seg1task1.pth
+PointNet/pointnet_seg2task1.pth
 PointNet/remap_class_ids.py
 PointNet/pointnet.pth
+PointNet/pointnet1task1.pth
+PointNet/pointnet2task1.pth
 PointNet/split_dataset.py
 PointNet/shapenet-core-seg/
