@@ -1,3 +1,9 @@
 .vscode/*
 bin/*
 !bin/.keep
+PointNet/count_splits.py
+PointNet/pointnet_seg.pth
+PointNet/remap_class_ids.py
+PointNet/pointnet.pth
+PointNet/split_dataset.py
+PointNet/shapenet-core-seg/
