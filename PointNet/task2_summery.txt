@@ -1,0 +1,7 @@
+For the classification, the original PointNet has higher accuracy than the modified PointNet, even though the modified model has a lower test loss.
+This is most likely because the original PointNet uses max pooling, which focuses on the most distinctive features of the shape.
+The modified PointNet, with average pooling, spreads attention across all points, which can reduce the impact of strong discriminative features.
+This results in slightly lower accuracy, even though the predictions are less extreme and therefore produce a lower loss.
+For segmentation, the modified PointNet performs better, achieving both higher accuracy and lower loss compared to the original model.
+We think this is because segmentation depends much more on local features rather than global shape information.
+The changes, such as average pooling, additional hidden layer, and the use of LeakyReLU, help preserve information from all points.
